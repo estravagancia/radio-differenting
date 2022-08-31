@@ -1,0 +1,273 @@
+/* CSS Document */
+:root {
+  --verde: #69ff02;
+  /*#56aa1c;*/
+  --azul: #003893;
+  /*#0061ff;*/
+  --negro: #000;
+  --blanco: #fff;
+}
+
+@font-face {
+  font-family: "nulshock";
+  font-style: normal;
+  font-weight: bold;
+  font-display: auto;
+  src: url("/assets/fonts/nulshock/nulshock-bd.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/nulshock/nulshock-bd.woff2") format("woff2"), url("/assets/fonts/nulshock/nulshock-bd.woff") format("woff"), url("/assets/fonts/nulshock/nulshock-bd.ttf") format("truetype"), url("/assets/fonts/nulshock/nulshock-bd.svg#nulshock") format("svg");
+  display: swap;
+}
+
+@font-face {
+  font-family: "nulshock";
+  font-style: normal;
+  font-weight: normal;
+  font-display: auto;
+  src: url("/assets/fonts/nulshock/nulshock-bk.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/nulshock/nulshock-bk.woff2") format("woff2"), url("/assets/fonts/nulshock/nulshock-bk.woff") format("woff"), url("/assets/fonts/nulshock/nulshock-bk.ttf") format("truetype"), url("/assets/fonts/nulshock/nulshock-bk.svg#nulshock") format("svg");
+  display: swap;
+}
+
+body {
+  font-family: "nulshock";
+  margin-left: 0px;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  height: 100vh;
+  color: var(--blanco);
+  text-transform: uppercase;
+  overflow-x: hidden;
+  background: linear-gradient(315deg, var(--verde), var(--azul));
+  background-size: 200% 200%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
+}
+
+img,
+svg {
+  max-width: 100%
+}
+
+div {
+  text-align: center;
+}
+
+.active small {
+  color: var(--azul);
+}
+
+.oculta {
+  display: none !important;
+}
+
+#share {
+  position: relative;
+}
+
+div#sharers {
+  position: absolute;
+  right: -2.75rem;
+  z-index: 9;
+  bottom: 0vh;
+  display: flex;
+  flex-direction: column;
+}
+
+div#sharers svg {
+  transform: scale(0.5);
+  fill: white;
+}
+
+#col {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  min-height: 100vh;
+}
+
+.fila {
+  flex-direction: row;
+  display: flex;
+  padding: 0 1rem;
+  min-width: 50vw;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.fila div {
+  padding: 0 2rem 0.5rem
+}
+
+div#freq {
+  width: 100px;
+  height: 100px;
+  background: transparent;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  color: var(--blanco);
+  /*  margin: 4rem;*/
+
+  transition: all 1s;
+}
+div#freq.active {
+  animation-name: frequence;
+  animation-duration: 2.0s;
+  animation-timing-function: ease-out;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: white;
+  color: var(--azul);
+}
+@keyframes frequence {
+  0% {
+    transform: scale(.75);
+    box-shadow: 0px 0px 150px var(--blanco);
+  }
+
+  50% {
+    box-shadow: 0px 0px 25px var(--blanco);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0px 0px 10px var(--blanco);
+  }
+}
+
+#logo {
+  width: 350px;
+  max-width: 80%;
+  margin-block-end: 1.5rem
+}
+
+#Capa_1 {
+  max-width: 100px;
+  display: block;
+  margin: auto;
+}
+
+#corazon,
+#share {
+  opacity: 0.75;
+  filter: drop-shadow(2px 4px 2px black);
+}
+svg#icodifferenting {
+  transform: scale(1.5);
+}
+
+#corazon:hover,
+#share:hover {
+  opacity: 1
+}
+
+#corazon svg,
+#share svg {
+  width: 40px;
+  height: 40px;
+  cursor: pointer
+}
+#share svg {fill:white}
+#player{ filter: drop-shadow(2px 4px 2px black);}
+#player:focus{filter:drop-shadow(1px 1px 1px black)}
+#player.activo{
+  filter:drop-shadow(1px 2px 2px black);
+}
+#player svg {
+  width: 92px;
+  height: 92px;
+  cursor: pointer
+}
+
+#wave {
+  margin-block-start: 2rem;
+}
+
+#wave svg {
+  width: 80vw;
+  max-height: 100px;
+}
+
+#wave span {
+  color: red;
+  font-size: 86px;
+  position: absolute;
+  left: calc(50% - 15px);
+  font-weight: 800;
+  z-index: 999999;
+  bottom: 0;
+}
+
+@media screen and (min-width: 768px) {
+  #wave span {
+    top: -30px;
+  }
+}
+
+#ondas {
+  max-width: 500px;
+  filter: drop-shadow(2px 4px 2px black);
+}
+
+#inicio {
+  transform: scaleY(0.2) translateY(400px);
+  animation: escalaX 1s linear infinte;
+}
+
+#ruta {
+  stroke: white;
+  animation: escalaY 1s linear infinte;
+}
+
+#audiostop {
+  opacity: 0
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 5%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 25%;
+  }
+}
+
+@keyframes escalaY {
+  0% {
+    transform: translateX(-200px) scaleY(0.25);
+  }
+
+  50% {
+    transform: translateX(-400px) scaleY(0.75);
+  }
+
+  75% {
+    transform: translateX(-600px) scaleY(0.5);
+  }
+
+  100% {
+    transform: translateX(-800px) scaleY(0.95);
+  }
+}
+
+@keyframes escalaX {
+  0% {
+    transform: translateX(-50px);
+  }
+
+  50% {
+    transform: translateX(50px);
+  }
+}
